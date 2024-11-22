@@ -6,10 +6,10 @@
 
 ::============================================================================
 ::
-::   IDM Activation Script (IAS)
+::   IDM Activation Script (IDM-Lifetime license)
 ::
-::   Homepages: https://github.com/lstprjct/IDM-Activation-Script
-::              https://t.me/ModByPiash/5
+::   Homepages: https://github.com/Pctoolsbox/idm-trial-reset
+::              
 ::
 ::       Telegram: @Stripe_op
 ::
