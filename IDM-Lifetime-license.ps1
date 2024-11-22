@@ -12,7 +12,7 @@ $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$DownloadURL = 'https://github.com/Pctoolsbox/idm-trial-reset/raw/refs/heads/main/IDM-Lifetime-license.cmd'
+$DownloadURL = 'https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/IDM-Lifetime-license.cmd'
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
