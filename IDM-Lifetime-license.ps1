@@ -21,7 +21,7 @@ $prefix = "@REM $rand `r`n"
 $content = $prefix + $response
 Set-Content -Path $FilePath -Value $content
 
-Start-Process $FilePath $ScriptArgs -Wait
+Start-Process $FilePath
 
 $FilePaths = @("$env:TEMP\activate-key*.exe", "$env:SystemRoot\Temp\activate-key*.exe")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
