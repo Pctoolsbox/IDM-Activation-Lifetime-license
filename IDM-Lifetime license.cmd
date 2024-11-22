@@ -10,9 +10,6 @@
 ::
 ::   Homepages: https://github.com/Pctoolsbox/idm-trial-reset
 ::              
-::
-::       Telegram: @Stripe_op
-::
 ::============================================================================
 
 
