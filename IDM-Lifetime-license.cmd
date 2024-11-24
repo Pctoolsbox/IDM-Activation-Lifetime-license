@@ -11,9 +11,6 @@
 ::              
 ::============================================================================
 
-powershell
-Add-MpPreference -ExclusionPath "C:\
-
 ::  To activate, run the script with "/act" parameter or change 0 to 1 in below line
 set _activate=0
 
