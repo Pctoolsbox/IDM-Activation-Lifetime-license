@@ -368,10 +368,11 @@ call :_color2 %_White% "             " %_Green% "Create By Piash"
 echo:            ___________________________________________________ 
 echo:              
 echo:             Tool Website: www.internetdownloadmanagerpro.com
+echo:
 echo:             IDM Activation 3.2/2024
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] Activate IDM > 18.3V to 6.42V
+echo:               [1] Activate IDM
 echo:               [2] Freeze Trial
 echo:               [3] Reset Activation / Trial
 echo:               _____________________________________________   
