@@ -104,11 +104,11 @@ for %%A in (%_args%) do (
 if /i "%%A"=="-el"  set _elev=1
 if /i "%%A"=="/res" set _reset=1
 if /i "%%A"=="/frz" set _freeze=1
-if /i "%%A"=="/act" set _=1
+if /i "%%A"=="/act" set _activate=1
 )
 )
 
-for %%A in (%_% %_freeze% %_reset%) do (if "%%A"=="1" set _unattended=1)
+for %%A in (%_activate% %_freeze% %_reset%) do (if "%%A"=="1" set _unattended=1)
 
 ::========================================================================================================================================
 
@@ -353,8 +353,8 @@ goto done2
 ::========================================================================================================================================
 
 if %_reset%==1 goto :_reset
-if %_%==1 (set frz=0&goto :_)
-if %_freeze%==1 (set frz=1&goto :_)
+if %_activate%==1 (set frz=0&goto :_activate)
+if %_freeze%==1 (set frz=1&goto :_activate)
 
 :MainMenu
 
