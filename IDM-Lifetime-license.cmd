@@ -1,13 +1,13 @@
-@set iasver=1.2
+@set iasver=3.2/2024
 @setlocal DisableDelayedExpansion
 @echo off
 
 
 ::============================================================================
 ::
-::   IDM Activation Script (IDM-Lifetime license)
+::   IDM Activation 3.2/2024 (IDM-Lifetime license)
 ::
-::   Homepages: https://github.com/Pctoolsbox/idm-trial-reset
+::   Homepages: https://www.internetdownloadmanagerpro.com
 ::              
 ::============================================================================
 
@@ -57,7 +57,7 @@ exit /b
 ::========================================================================================================================================
 
 set "blank="
-set "mas=https://github.com/lstprjct/IDM-Activation-Script/wiki/"
+set "mas=https://www.internetdownloadmanagerpro.com/"
 
 ::  Check if Null service is working, it's important for the batch script
 
@@ -91,7 +91,7 @@ popd
 
 cls
 color 07
-title  IDM Activation Script %iasver%
+title  IDM Activation %iasver%
 
 set _args=
 set _elev=
@@ -260,7 +260,7 @@ if defined quedit goto :skipQE
 ::========================================================================================================================================
 
 cls
-title  IDM Activation Script %iasver%
+  IDM Activation %iasver%
 
 echo:
 echo Initializing...
@@ -359,7 +359,7 @@ if %_freeze%==1 (set frz=1&goto :_activate)
 :MainMenu
 
 cls
-title  IDM Activation Script %iasver%
+  IDM Activation %iasver%
 if not defined terminal mode 75, 28
 
 echo:
