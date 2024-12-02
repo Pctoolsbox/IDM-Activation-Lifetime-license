@@ -104,11 +104,11 @@ for %%A in (%_args%) do (
 if /i "%%A"=="-el"  set _elev=1
 if /i "%%A"=="/res" set _reset=1
 if /i "%%A"=="/frz" set _freeze=1
-if /i "%%A"=="/act" set _activate=1
+if /i "%%A"=="/act" set _=1
 )
 )
 
-for %%A in (%_activate% %_freeze% %_reset%) do (if "%%A"=="1" set _unattended=1)
+for %%A in (%_% %_freeze% %_reset%) do (if "%%A"=="1" set _unattended=1)
 
 ::========================================================================================================================================
 
@@ -353,8 +353,8 @@ goto done2
 ::========================================================================================================================================
 
 if %_reset%==1 goto :_reset
-if %_activate%==1 (set frz=0&goto :_activate)
-if %_freeze%==1 (set frz=1&goto :_activate)
+if %_%==1 (set frz=0&goto :_)
+if %_freeze%==1 (set frz=1&goto :_)
 
 :MainMenu
 
@@ -367,11 +367,10 @@ echo:
 call :_color2 %_White% "             " %_Green% "Create By Piash"
 echo:            ___________________________________________________ 
 echo:
-echo:               Telegram: @ModByPiash
-echo:               Github: https://github.com/lstprjct
+echo:             Tool Website: www.internetdownloadmanagerpro.com
 echo:            ___________________________________________________ 
 echo:                                                               
-echo:               [1] Activate
+echo:               [1] Activate IDM > 18.3V to 6.42V
 echo:               [2] Freeze Trial
 echo:               [3] Reset Activation / Trial
 echo:               _____________________________________________   
@@ -386,7 +385,7 @@ choice /C:123450 /N
 set _erl=%errorlevel%
 
 if %_erl%==6 exit /b
-if %_erl%==5 start https://github.com/lstprjct/IDM-Activation-Script & goto MainMenu
+if %_erl%==5 start https://www.internetdownloadmanagerpro.com & goto MainMenu
 if %_erl%==4 start https://www.internetdownloadmanager.com/download.html & goto MainMenu
 if %_erl%==3 goto _reset
 if %_erl%==2 (set frz=1&goto :_activate)
