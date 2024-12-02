@@ -364,7 +364,7 @@ if not defined terminal mode 75, 28
 
 echo:
 echo:
-call :_color2 %_White% "             " %_Green% "Create By Piash"
+call :_color2 %_White% "             " %_Green% "Pctoolsbox"
 echo:            ___________________________________________________ 
 echo:              
 echo:             Tool Website: www.internetdownloadmanagerpro.com
@@ -499,7 +499,7 @@ if %frz%==0 if %_unattended%==0 (
 echo:
 echo %line%
 echo:
-echo      Activation is not working for some users and IDM may show fake serial nag screen.
+echo      Activation is not working for some users.
 echo:
 call :_color2 %_White% "     " %_Green% "Its recommended to use Freeze Trial option instead."
 echo %line%
