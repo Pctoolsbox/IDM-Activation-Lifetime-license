@@ -364,7 +364,7 @@ if not defined terminal mode 75, 28
 
 echo:
 echo:
-call :_color2 %_White% "             " %_Green% "Pctoolsbox"
+call :_color2 %_White% "             " %_Green% "Create By Pctoolsbox"
 echo:            ___________________________________________________ 
 echo:              
 echo:             Tool Website: www.internetdownloadmanagerpro.com
